@@ -1,4 +1,4 @@
-#include "Macierz.h"
+    #include "Macierz.h"
 
 void Macierz::losowanie (){
     for (int i=0; i<wiersze; i++)
@@ -54,7 +54,7 @@ Macierz ::Macierz(string _nazwapliku){
             }
     }
     else{
-        cout << "brak pliku";
+        cout << "brak pliku o podanej nazwie";
         we.close();
         exit (1);
     }
@@ -157,6 +157,7 @@ Macierz operator+ (Macierz &x, Macierz &y){
     return wynik;
 }
 
+
 Macierz operator- (Macierz &x, Macierz &y){
     Macierz wynik (x.wiersze, x.kolumny);
     for (int i=0; i<x.wiersze; i++)
@@ -171,7 +172,7 @@ Macierz operator* (Macierz &x, Macierz &y){
     for (int i=0; i<x.wiersze; i++){
         for (int j=0; j<y.kolumny; j++){
             for (int k=0; k<x.kolumny; k++)
-                    liczba=liczba+(x.zawartosc[i][k]*y.zawartosc[k][j]);
+                liczba=liczba+(x.zawartosc[i][k]*y.zawartosc[k][j]);
             wynik.zawartosc[i][j]=liczba;
             liczba=0;
         }
